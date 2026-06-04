@@ -31,4 +31,4 @@ jobs:
 
     - name: Run Preprocessing
       run: |
-        python preprocessing/automate_Rifqi.py
+        python preprocessing/automate_rifqi.py

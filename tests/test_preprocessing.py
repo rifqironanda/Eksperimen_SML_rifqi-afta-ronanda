@@ -15,3 +15,4 @@ def test_preprocess_not_empty():
     )
 
     assert len(df) > 0
+    assert "Churn" in df.columns

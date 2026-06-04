@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 import os
 
+
 def preprocess_data(input_path, output_path):
 
     df = pd.read_csv(input_path)
@@ -73,8 +74,21 @@ def preprocess_data(input_path, output_path):
 
 
 if __name__ == "__main__":
+    from pathlib import Path
 
-    preprocess_data(
-        "../dataset_raw/WA_Fn-UseC_-Telco-Customer-Churn.csv",
-        "./dataset_preprocessing/telco_preprocessed.csv"
+    BASE_DIR = Path(__file__).resolve().parent.parent
+
+    input_file = (
+        BASE_DIR
+        / "dataset_raw"
+        / "WA_Fn-UseC_-Telco-Customer-Churn.csv"
     )
+
+    output_file = (
+        BASE_DIR
+        / "preprocessing"
+        / "dataset_preprocessing"
+        / "telco_preprocessed.csv"
+    )
+
+    preprocess_data(input_file, output_file)
